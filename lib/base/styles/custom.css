@@ -1,0 +1,36 @@
+.pre.language-pug {
+  color: #657b83;
+}
+
+.language-pug .pre-comment {
+  color: #a9b6b6;
+  font-style: italic;
+}
+
+.language-pug .pre-tag {
+  color: #073642;
+}
+
+.language-pug .pre-class {
+  color:#218CD0
+}
+
+.language-pug .pre-id { color:#cb4b16}
+
+.language-pug .pre-attr{
+  color: #2aa198;
+}
+
+.language-pug .pre-value {
+  color: #d33682;
+}
+
+.language-pug .pre-doctype,
+.language-pug .pre-yield,
+.language-pug .pre-keyword,
+.language-pug .pre-default,
+.language-pug .pre-function,
+.language-pug .pre-var,
+.language-pug .pre-filter,
+.language-pug .pre-blockcode,
+.language-pug .pre-code { color: pink; }
