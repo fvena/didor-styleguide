@@ -1,0 +1,32 @@
+{
+  "name": "didor-styleguide",
+  "version": "0.1.0",
+  "description": "Generate a styleguide from your SCSS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fvena/didor-styleguide.git"
+  },
+  "keywords": [
+    "didor",
+    "styleguide",
+    "scss",
+    "live"
+  ],
+  "author": "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fvena/didor-styleguide/issues"
+  },
+  "homepage": "https://github.com/fvena/didor-styleguide#readme",
+  "devDependencies": {
+    "concat-regexp": "0.0.6",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.3",
+    "markdown": "^0.5.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.1.1",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-beta6"
+  }
+}

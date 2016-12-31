@@ -1,0 +1,5 @@
+nav.nav
+  ul
+    for elements, section in docs
+      li
+        a(href='./' + section.toLowerCase() + '.html') #{section}
