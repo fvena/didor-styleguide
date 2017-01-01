@@ -1,226 +1,35 @@
 doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='x-ua-compatible' content='ie=edge')
-    meta(name='description' content='Plantilla para didor-docs.')
-    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
-
-    title= 'Didor Docs'
-
-    //- Disable tap highlight on IE
-    meta(name='msapplication-tap-highlight' content='no')
-
-    //- Web Application Manifest -->
-    link(rel='manifest' href='manifest.json')
-
-    //- Add to homescreen for Chrome on Android
-    meta(name='mobile-web-app-capable' content='yes')
-    meta(name='application-name' content='Didor Starter Kit')
-    link(rel='icon' type='image/png' sizes='192x192' href='/images/touch/android-chrome-192x192.png')
-
-    //- Add to homescreen for Safari on iOS
-    meta(name='apple-mobile-web-app-capable' content='yes')
-    meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
-    meta(name='apple-mobile-web-app-title' content='Didor Starter Kit')
-    link(rel='apple-touch-icon' sizes='57x57' href='/images/touch/apple-touch-icon-57x57.png')
-    link(rel='apple-touch-icon' sizes='60x60' href='/images/touch/apple-touch-icon-60x60.png')
-    link(rel='apple-touch-icon' sizes='72x72' href='/images/touch/apple-touch-icon-72x72.png')
-    link(rel='apple-touch-icon' sizes='76x76' href='/images/touch/apple-touch-icon-76x76.png')
-    link(rel='apple-touch-icon' sizes='114x114' href='/images/touch/apple-touch-icon-114x114.png')
-    link(rel='apple-touch-icon' sizes='120x120' href='/images/touch/apple-touch-icon-120x120.png')
-    link(rel='apple-touch-icon' sizes='144x144' href='/images/touch/apple-touch-icon-144x144.png')
-    link(rel='apple-touch-icon' sizes='152x152' href='/images/touch/apple-touch-icon-152x152.png')
-    link(rel='apple-touch-icon' sizes='180x180' href='/images/touch/apple-touch-icon-180x180.png')
-
-    //- Tile icon for Win8 (144x144 + tile color)
-    meta(name='msapplication-TileColor' content='#fff')
-    meta(name='msapplication-TileImage' content='/images/touch/mstile-144x144.png')
-    meta(name='msapplication-config' content='/browserconfig.xml')
-
-    //- Color the status bar on mobile devices
-    meta(name='theme-color' content='#fff')
-
-    //- Favicon
-    link(rel='icon' type='image/png' sizes='32x32' href='/images/touch/favicon-32x32.png')
-    link(rel='icon' type='image/png' sizes='16x16' href='/images/touch/favicon-16x16.png')
-    link(rel='shortcut icon' href='/images/touch/favicon.ico')
-
-    //- Fonts
-    link(href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css')
-
-    //- Styles
-    link(href="styles/theDocs.all.min.css" rel="stylesheet")
-    link(href="styles/custom.css" rel="stylesheet")
+html(lang='es')
+  include ../partials/head.pug
 
   body
-    //- Sidebar
-    aside.sidebar.sidebar-boxed
-      a.sidebar-brand(href="index.html")
-        img(src="images/logo-sidebar-alt.png" alt="logo")
-
-      div !{menu}
-    //- End Sidebar
-
-    //- Header
-    header.site-header.navbar-fullwidth
-      nav.navbar.navbar-default
-        .container
-
-          //- Toggle buttons and brand
-          .navbar-header
-            button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar")
-              span.glyphicon.glyphicon-option-vertical
-
-            button.navbar-toggle.for-sidebar(type="button" data-toggle="offcanvas")
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-
-          //- Top navbar
-          #navbar.navbar-collapse.collapse(aria-expanded="true" role="banner")
-            ul.nav.navbar-nav.navbar-right
-              li.active
-                a(href="index.html") Documentation
-              li
-                a(href="page_blog.html") Blog
-              li
-                a(href="page_faq.html") FAQ
-              li
-                a(href="http://themeforest.net/item/thedocs-online-documentation-template/13070884/comments" target="_blank") Support
-              li.hero
-                a(href="http://themeforest.net/item/thedocs-online-documentation-template/13070884") Purchase
-    //- End Header
-
+    include ../partials/aside.pug
 
     //- Main
     main.container-fluid
       .row
-
-        //- Main content
         article.main-content(role="main")
-
           header
-            h1 Boxed sidebar
+            h1= section
+            p Generated at #{Date()}
             p To give you more layout varieties, we implemented a full-width layout with a fixed sidebar on left/right. Also, this sidebar has two color variations.
+
             ol.toc
-              li
-                a(href="#page_layout") Page Layout
-              li
-                a(href="#variations") Variations
+              each elements in components
+                li
+                  a(href='#' + elements.name.toLowerCase().replace(/\s/g, "_")) #{elements.name}
 
-          section
-            h2#page_layout Page Layout
-            p Please consider that this layout has a bit different html structure that other layouts.
-
-            pre.line-numbers
-              code.language-markup
-                | &lt;!DOCTYPE html&gt;
-                | &lt;html lang=&quot;en&quot;&gt;
-                |   &lt;head&gt;&lt;/head&gt;
-                |   &lt;body&gt;
-
-                |     &lt;!-- Site header --&gt;
-                |     &lt;header class=&quot;site-header&quot;&gt;
-
-                |     &lt;/header&gt;
-                |     &lt;!-- END Site header --&gt;
-
-
-                |     &lt;!-- Sidebar --&gt;
-                |     &lt;aside class=&quot;sidebar sidebar-boxed&quot;&gt;
-
-                |     &lt;/aside&gt;
-                |     &lt;!-- END Sidebar --&gt;
-
-
-                |     &lt;main class=&quot;container-fluid&quot;&gt;
-                |       &lt;div class=&quot;row&quot;&gt;
-
-                |         &lt;!-- Main content --&gt;
-                |         &lt;article class=&quot;main-content&quot; role=&quot;main&quot;&gt;
-
-                |         &lt;/article&gt;
-                |         &lt;!-- END Main content --&gt;
-
-
-                |         &lt;!-- Footer --&gt;
-                |         &lt;footer class=&quot;site-footer&quot;&gt;
-
-                |         &lt;/footer&gt;
-                |         &lt;!-- END Footer --&gt;
-
-                |       &lt;/div&gt;
-                |     &lt;/main&gt;
-
-                |   &lt;/body&gt;
-                | &lt;/html&gt;
-
-          section
-            h2#variations Variations
-            p You can place this sidebar in left or right side of your page. By default it's left-sided, but you can simply add <code>sidebar-right</code> class to the <code>.sidebar-boxed</code> tag.
-            p Also, by adding <code>sidebar-dark</code> class to the <code>.sidebar-boxed</code> you can change the color of the sidebar.</p>
-
-            h3 Try it
-
-            .btn-group(data-toggle="buttons")
-              label#sb-left-side.btn.btn-primary.active
-                input(type="radio" name="options" autocomplete="off" checked)
-                | Left sided (default)
-              label#sb-right-side.btn.btn-primary
-                input(type="radio" name="options" autocomplete="off")
-                | Right sided
-
-            .btn-group(data-toggle="buttons")
-              label#sb-skin-light.btn.btn-primary.active
-                input(type="radio" name="options" autocomplete="off" checked)
-                | Light skin (default)
-              label#sb-skin-dark.btn.btn-primary
-                input(type="radio" name="options" autocomplete="off")
-                | Dark skin
-
+          each elements in components
             section
-              h1 Styleguide 3
-              time.generated Generated at #{Date()}
+              h2(id=elements.name.toLowerCase().replace(/\s/g, "_")) #{elements.name}
+              div !{elements.description}
+              p= elements.statuses
 
-              each elements,index in components
-                h2= elements.name
-                h4 Estados
-                p= elements.statuses
-
-                p !{elements.description}
-
-                h4 Ejemplo
-
-                iframe(src="javascript:'<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"styles/main.css\"></head><body>" + elements.exampleHTML +"</body>';")
-
-                h4 Higlight
-
-                pre.line-numbers.language-pug
-                  code.language-markup !{elements.exampleCode}
-        //- End Main content
-
-        //- Footer
-        footer.site-footer
-          .container-fluid
-            a#scroll-up(href="#")
-              i.fa.fa-angle-up
-
-            .row
-              .col-md-6.col-sm-6
-                p Copyright &copy; 2015. All right reserved
-
-              .col-md-6.col-sm-6
-                ul.footer-menu
-                  li
-                    a(href="page_changelog.html") Changelog
-                  li
-                    a(href="page_credits.html") Credits
-                  li
-                    a(href="mailto:support@shamsoft.net") Contact us
-        //- End Footer
+              .code-window
+                .code-preview
+                  iframe(src="javascript:'" + elements.exampleIframe +"';")
+                pre.line-numbers
+                  code.language-jade !{elements.exampleCode}
     //- End Main
 
-    //- Scripts
-    script(src="scripts/theDocs.all.min.js")
-    script(src="scripts/custom.js")
+    include ../partials/footer.pug

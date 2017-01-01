@@ -1,36 +1,48 @@
-.pre.language-pug {
+iframe {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-brand img { width: 125px; }
+
+
+
+.pre.language-jade {
   color: #657b83;
 }
 
-.language-pug .pre-comment {
+.language-jade .pre-comment {
   color: #a9b6b6;
   font-style: italic;
 }
 
-.language-pug .pre-tag {
+.language-jade .pre-tag {
   color: #073642;
 }
 
-.language-pug .pre-class {
+.language-jade .pre-class {
   color:#218CD0
 }
 
-.language-pug .pre-id { color:#cb4b16}
+.language-jade .pre-id { color:#cb4b16}
 
-.language-pug .pre-attr{
+.language-jade .pre-attr{
   color: #2aa198;
 }
 
-.language-pug .pre-value {
+.language-jade .pre-value {
   color: #d33682;
 }
 
-.language-pug .pre-doctype,
-.language-pug .pre-yield,
-.language-pug .pre-keyword,
-.language-pug .pre-default,
-.language-pug .pre-function,
-.language-pug .pre-var,
-.language-pug .pre-filter,
-.language-pug .pre-blockcode,
-.language-pug .pre-code { color: pink; }
+.language-jade .pre-doctype,
+.language-jade .pre-yield,
+.language-jade .pre-keyword,
+.language-jade .pre-default,
+.language-jade .pre-function,
+.language-jade .pre-var,
+.language-jade .pre-filter,
+.language-jade .pre-blockcode,
+.language-jade .pre-code { color: pink; }

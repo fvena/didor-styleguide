@@ -1,0 +1,34 @@
+aside.sidebar.sidebar-boxed
+  if logo
+    a.sidebar-brand(href="index.html")
+      img(src=logo alt="logo")
+
+  ul.sidenav.dropable.sticky
+    li
+      a(href="index.html") Overview
+
+    li
+      a(href="#") Estilos Básicos
+      ul
+        li
+          a(href="css_typography.html") Tipografía
+        li
+          a(href="css_button.html") Botones
+        li
+          a(href="css_label.html") Etiquetas
+        li
+          a(href="css_table.html") Tablas
+        li
+          a(href="css_alert.html") Alertas
+        li
+          a(href="css_icon.html") Iconos
+
+    li
+      a(href="#" class={"active": components}) CSS Componentes
+      ul
+        for component in menu
+          li
+            a(href='./' + component.toLowerCase() + '.html' class={"active": section == component}) #{component}
+
+    li
+      a(href="#") Directivas
