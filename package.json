@@ -1,6 +1,6 @@
 {
   "name": "didor-styleguide",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate a styleguide from your SCSS",
   "main": "index.js",
   "repository": {
@@ -21,8 +21,10 @@
   "homepage": "https://github.com/fvena/didor-styleguide#readme",
   "devDependencies": {
     "concat-regexp": "0.0.6",
+    "css-parse": "^2.0.0",
     "fs": "0.0.1-security",
     "fs-extra": "^1.0.0",
+    "js-yaml": "^3.7.0",
     "lodash": "^4.17.3",
     "markdown": "^0.5.0",
     "mkdirp": "^0.5.1",
